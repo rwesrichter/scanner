@@ -15,13 +15,13 @@ class client:
         self.token = phone.get('PHONE', 'TOKEN')
         self.client = Client(self.sid, self.token)
 
-    def message(self):
+    def message(self, address, message):
         return False
 
 
 class sms(client):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
 
     def message(self, address, message):
         self.client.messages.create(body=message, from_=self.number, to=address)
@@ -30,7 +30,7 @@ class sms(client):
 
 class call(client):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
 
     def message(self, address, message):
         self.client.calls.create(body=message, from_=self.number, to=address)
