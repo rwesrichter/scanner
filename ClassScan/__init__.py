@@ -37,3 +37,10 @@ def get_config(path=None):
     cfg.read(config_path)
 
     return cfg
+
+pass_dict = {'hall': 0,
+             'nurse': 1,
+             'admin': 2,
+             'councilor': 3,
+             'teacher': 4,
+             'detention': 5}
