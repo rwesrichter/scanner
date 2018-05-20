@@ -1,13 +1,17 @@
+# coding=utf-8
 import os
+import sys
 import configparser
 from pathlib import Path
+
+sys.path.append('../')
 
 ROOT_DIR = os.path.dirname(__file__)
 TOP_DIR = os.path.dirname(ROOT_DIR)
 HOME_DIR = Path.home()
 
-VALID_CONFIG_NAMES = ['ClassScan.ini',
-                      '.ClassScan.ini']
+VALID_CONFIG_NAMES = ['config.ini',
+                      '.config.ini']
 
 VALID_CONFIG_DIRS = [HOME_DIR, TOP_DIR, ROOT_DIR]
 
@@ -28,7 +32,7 @@ def get_config(path=None):
     cfg = configparser.ConfigParser()
 
     if not config_path:
-        raise ValueError("Unable to find a remarkable.ini file.")
+        raise ValueError("Unable to find a config.ini file.")
 
     cfg.read(config_path)
 

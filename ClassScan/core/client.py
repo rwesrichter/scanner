@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 from twilio.rest import Client
 import ClassScan
 
@@ -23,8 +26,8 @@ class sms(client):
     def __init__(self):
         super().__init__()
 
-    def message(self, address, message):
-        self.client.messages.create(body=message, from_=self.number, to=address)
+    def message(self, message, address):
+        self.client.messages.create(body=message, to=address, from_=self.number, media_url='http://www.example.com/cheeseburger.png')
         return True
 
 
@@ -32,6 +35,6 @@ class call(client):
     def __init__(self):
         super().__init__()
 
-    def message(self, address, message):
-        self.client.calls.create(body=message, from_=self.number, to=address)
+    def message(self, message, address):
+        self.client.calls.create(body=message, to=address, from_=self.number)
         return True
