@@ -1,0 +1,13 @@
+*.pyc
+*.ini
+*.lprof
+*.prof
+*.egg
+*.orig
+*.rdb
+*.log
+\.cache
+\.coverage
+\.idea
+\.vs
+\.vscode
