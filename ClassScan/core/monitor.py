@@ -1,4 +1,8 @@
+import os
+import pandas as pd
 import ClassScan
+
+config = ClassScan.get_config()
 
 class monitor:
     def _init__(self):
@@ -6,7 +10,7 @@ class monitor:
         self.listen = None
         self.inbox = None
         self.student_df = None
-        self.teacher_df = None
+        self.preprocess()
 
     def display_menu(self):
         ptype = input("Pass Type:")
@@ -24,7 +28,15 @@ class monitor:
     @staticmethod
     def process_individual(id):
         pass
-    
+
+    def preprocess_students(self):
+        path = os.path.join(ClassScan.DATA_DIR, 'ClassStudentListingwithAddresses')
+        df = pd.read_excel('ClassStudentListingwithAddresses')
+        self.student_df = df
+
+    def preprocess(self):
+        self.preprocess_students()
+
     def process(self):
         ptype = self.display_menu()
         code = self.process_type(ptype)

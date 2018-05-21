@@ -10,6 +10,8 @@ ROOT_DIR = os.path.dirname(__file__)
 TOP_DIR = os.path.dirname(ROOT_DIR)
 HOME_DIR = Path.home()
 
+DATA_DIR = os.path.join(TOP_DIR, 'data')
+
 VALID_CONFIG_NAMES = ['config.ini',
                       '.config.ini']
 
