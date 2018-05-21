@@ -41,8 +41,17 @@ def get_config(path=None):
     return cfg
 
 pass_dict = {'hall': 0,
+             'bathroom': 0,
+             'water': 0,
              'nurse': 1,
              'admin': 2,
              'councilor': 3,
              'teacher': 4,
              'detention': 5}
+
+code_dict = {0: 'hall',
+             1: 'nurse',
+             2: 'admin',
+             3: 'councilor',
+             4: 'teacher',
+             5: 'detention'}
