@@ -27,7 +27,9 @@ class sms(client):
         super().__init__()
 
     def message(self, message, address):
-        self.client.messages.create(body=message, to=address, from_=self.number, media_url='http://www.example.com/cheeseburger.png')
+        self.client.messages.create(body=message,
+                                    to=address,
+                                    from_=self.number)
         return True
 
 
@@ -36,5 +38,7 @@ class call(client):
         super().__init__()
 
     def message(self, message, address):
-        self.client.calls.create(body=message, to=address, from_=self.number)
+        self.client.calls.create(body=message,
+                                 to=address,
+                                 from_=self.number)
         return True
